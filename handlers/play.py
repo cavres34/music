@@ -34,8 +34,8 @@ def transcode(filename):
 def convert_seconds(seconds):
     seconds = seconds % (24 * 3600)
     seconds %= 3600
-    minutes = seconds // 60
-    seconds %= 60
+    minutes = seconds // 180
+    seconds %= 180
     return "%02d:%02d" % (minutes, seconds)
 
 
@@ -145,7 +145,7 @@ async def play(_, message: Message):
     url = get_url(message)
 
     if audio:
-        if round(audio.duration / 60) > DURATION_LIMIT:
+        if round(audio.duration / 180) > DURATION_LIMIT:
             raise DurationLimitError(
                 f"•> **Daha uzun videolar {DURATION_LIMIT} dakikaların oynatılamasına izin verilmez!**"
             )
@@ -154,7 +154,7 @@ async def play(_, message: Message):
         title = file_name
         thumb_name = "https://i.ibb.co/Qkz78hx/images-1.jpg"
         thumbnail = thumb_name
-        duration = round(audio.duration / 60)
+        duration = round(audio.duration / 180)
         views = "Yerel olarak eklendi"
 
         keyboard = InlineKeyboardMarkup(
@@ -198,7 +198,7 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("🔖 𝖱𝖾𝗌𝗆𝗂 𝖪𝖺𝗇𝖺𝗅", url=f"https://t.me/{BOT_CHANNEL}"),
+                InlineKeyboardButton("🔖 𝖪𝖺𝗇𝖺𝗅", url=f"https://t.me/{BOT_CHANNEL}"),
             ],
         ]
     )
@@ -260,7 +260,7 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("🔖 𝖱𝖾𝗌𝗆𝗂 𝖪𝖺𝗇𝖺𝗅", url=f"https://t.me/{BOT_CHANNEL}"),
+                InlineKeyboardButton("🔖 𝖪𝖺𝗇𝖺𝗅", url=f"https://t.me/{BOT_CHANNEL}"),
             ],
         ]
     )
