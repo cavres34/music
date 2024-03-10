@@ -2,7 +2,7 @@
   "name": "cavres Music",
   "description": "Telegram'ınızın Grup Sesli Sohbeti'nde şarkı çalmak için Açık Kaynaklı bot. Powered by Mehmetbaba55.",
   "keywords": ["music", "voicechat", "telegram"],
-  "repository": "https://github.com/Mehmetbaba55/EfsaneMusic",
+  "repository": "https://github.com/cavres34/music",
   "stack": "container",
   "env": {
     "SESSION_NAME": {
@@ -21,7 +21,7 @@
     "BOT_USARNAME": {
       "description": "Müzik Oynatıcı Bot Kullanıcı İsmi @ olmadan yazınız.",
       "required": true,
-      "value": ""
+      "value": "masalmusic_bot"
      
     },
     "API_ID": {
@@ -39,7 +39,7 @@
     "DURATION_LIMIT": {
       "description": "İndirmeler için en fazla ses süresi sınırı (minutes).",
       "required": true,
-      "value": "55"
+      "value": "180"
     }
   }
 }
